@@ -69,7 +69,7 @@ $().ready(function () {
 
             $('#resultsMedsList').append('<div class="addMedsOuput mb-1">' + medsResultMod.toUpperCase() + '</div>');
             medsPersonalList.push(medsResultMod);
-        })
+        });
 
         database.ref('users').child(firebase.auth().currentUser.uid).on('child_removed', function (snap) {
             var medsResult = JSON.stringify(snap);
