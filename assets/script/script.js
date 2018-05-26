@@ -30,7 +30,7 @@ $().ready(function () {
             $('#logInOut').text('Login');
             $('#medsAddDiv').empty();
         }
-    });
+    };
 
     function setVarList() {
 
