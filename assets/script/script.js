@@ -21,12 +21,14 @@ $().ready(function () {
     var database = firebase.database();
 
     firebase.auth().onAuthStateChanged( function(user){
-        console.log(user);
+        console.log('ok so = '+user);
         if (user) {
+            console.log('looged in ');
             $('#logInOut').text('Logout');
             setVarList();
             setAddMeds();
         } else {
+            console.log('not logged in ');
             $('#logInOut').text('Login');
             $('#medsAddDiv').empty();
         }
