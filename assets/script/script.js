@@ -20,13 +20,13 @@ $().ready(function () {
     firebase.initializeApp(config);
     var database = firebase.database();
 
-    firebase.auth().onAuthStateChanged( function(user){
-        console.log('ok so = '+user);
+    firebase.auth().onAuthStateChanged( function(user){        
         if (user) {
             console.log('looged in ');
             $('#logInOut').text('Logout');
             setVarList();
             setAddMeds();
+            window.location.href = "index.html";
         } else {
             console.log('not logged in ');
             $('#logInOut').text('Login');
