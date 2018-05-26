@@ -45,6 +45,12 @@ $().ready(function () {
         history.back();
     });
 
+    $('#navbarNav').on('click', function(){
+        $('#navbarNav').collapse('hide');
+    });
+
+
+
     $('#logInOut').on('click', function () {
         let currentTxt = $('#logInOut').text();
         if (currentTxt === 'Login')
