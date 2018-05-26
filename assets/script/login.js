@@ -13,7 +13,7 @@ var config = {
 
 // FirebaseUI config.
 var uiConfig = {
-    signInSuccessUrl: 'index.html',
+    signInSuccessUrl: 'index.html#appSection',
     signInOptions: [
       
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,

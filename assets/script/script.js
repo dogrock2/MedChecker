@@ -21,6 +21,7 @@ $().ready(function () {
     var database = firebase.database();
 
     firebase.auth().onAuthStateChanged((user) => {
+        console.log(user);
         if (user) {
             $('#logInOut').text('Logout');
             setVarList();
