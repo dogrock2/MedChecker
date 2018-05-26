@@ -34,6 +34,9 @@
     font-size: 30px;
 }
 
+#locateSection {
+    background-image: url("../images/bg_pattern.png");   
+} 
 
 #mapTitle {
     font-family: 'Abril Fatface', cursive;
@@ -93,6 +96,8 @@
 #loginSection{
     height: 40vh;
 }
+
+
 
 @media only screen and (max-width: 884px) {
     #appSection {

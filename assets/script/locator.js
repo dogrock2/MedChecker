@@ -32,7 +32,7 @@
           getLatLng(addr, city, state);
           $('#msg').html('');
         } else {
-          $('#msg').html('<h4>Please complete all fields.</h4>')     
+          $('#msg').html('<h4>Please complete all fields.</h4>');
         }
     });
 
@@ -42,7 +42,8 @@
       $('#stateInput').val('');
       $('#addrInput').val('');
       $('#resultsMap').empty();
-	  rad = 0;
+    
+	    rad = 1;
       var1 = 37.1;
       var2 = -95.7;
       toZoom = 4;
@@ -56,7 +57,7 @@
       var runner = setInterval(function () {
 
           if (cnt < len) {
-              runGetByDetails(ids[cnt])
+              runGetByDetails(ids[cnt]);
               cnt++;
           } else {
               clearInterval(runner);
