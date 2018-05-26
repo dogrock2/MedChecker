@@ -41,8 +41,8 @@ var uiConfig = {
         var phoneNumber = user.phoneNumber;
         var providerData = user.providerData;
         user.getIdToken().then(function(accessToken) {
-          document.getElementById('sign-in-status').textContent = 'Signed in';
-          document.getElementById('sign-in').textContent = 'Sign out';
+          document.getElementById('logInOut').textContent = 'Logout';
+          document.getElementById('logInOut').textContent = 'Login';
           document.getElementById('account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,

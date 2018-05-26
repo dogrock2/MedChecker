@@ -20,7 +20,7 @@ $().ready(function () {
     firebase.initializeApp(config);
     var database = firebase.database();
 
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged( function(user){
         console.log(user);
         if (user) {
             $('#logInOut').text('Logout');
@@ -30,7 +30,7 @@ $().ready(function () {
             $('#logInOut').text('Login');
             $('#medsAddDiv').empty();
         }
-    };
+    });
 
     function setVarList() {
 
