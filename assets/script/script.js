@@ -8,6 +8,7 @@ $().ready(function () {
     var combos = [];
     var loggedId = '';
     var medsPersonalList = [];
+    var agree = sessionStorage.getItem("modalAgreementMeds");
 
     var config = {
         apiKey: "AIzaSyCx9GQGn_22IG4QD1DXxj5zTzy8Us9vf7U",
@@ -31,8 +32,6 @@ $().ready(function () {
         }
     });
 
-
-    let agree = sessionStorage.getItem("modalAgreementMeds");
     if (!agree)
         $('#myModal').show();
 
@@ -40,6 +39,7 @@ $().ready(function () {
         sessionStorage.setItem("modalAgreementMeds", 'true');
         $('#myModal').hide();
     });
+    
     $('#modalNoBtn').on('click', function () {
         sessionStorage.modalAgreementMeds = null;
         history.back();
