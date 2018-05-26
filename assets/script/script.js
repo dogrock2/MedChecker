@@ -20,25 +20,37 @@ $().ready(function () {
     firebase.initializeApp(config);
     var database = firebase.database();
 
-    firebase.auth().onAuthStateChanged( function(user){        
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            console.log('looged in ');
             $('#logInOut').text('Logout');
             setVarList();
-            setAddMeds();            
+            setAddMeds();
         } else {
-            console.log('not logged in ');
             $('#logInOut').text('Login');
             $('#medsAddDiv').empty();
         }
     });
 
-    $('#logInOut').on('click', function(){
+
+    let agree = sessionStorage.getItem("modalAgreementMeds");
+    if (!agree)
+        $('#myModal').show();
+
+    $('#modalYesBtn').on('click', function () {
+        sessionStorage.setItem("modalAgreementMeds", 'true');
+        $('#myModal').hide();
+    });
+    $('#modalNoBtn').on('click', function () {
+        sessionStorage.modalAgreementMeds = null;
+        history.back();
+    });
+
+    $('#logInOut').on('click', function () {
         let currentTxt = $('#logInOut').text();
-        if(currentTxt === 'Login')
+        if (currentTxt === 'Login')
             window.location.href = "login.html";
         else
-            window.location.href = "index.html";    
+            window.location.href = "index.html";
 
     });
 
@@ -265,25 +277,7 @@ $().ready(function () {
         $('#resultsDiv').prepend(contDiv);
 
     } //ends display Result
-    let discalimer = "<br><p>The information provided in this site is transcribed by the " + 
-    "RxNav Drug Interaction API located at <a href='https://rxnav.nlm.nih.gov'>https://rxnav.nlm.nih.gov</a>.  "+
-    "We do not take resposibility for the information provided. Any information obtained should be "+
-    "verified with a professional and any action you take upon the information on this "+
-    "website is strictly your own risk. If you accept click to continue.</p>";
-    let modalDiv = $('<div>');
-        modalDiv.addClass('modalMain');
-    
-    let modalCont = $('<div>');
-        modalCont.addClass('modal-content');
-        modalCont.append("<h1>Use at your own risk.</h1>");
-        modalCont.append(discalimer);
 
-    modalDiv.append(modalCont);
-    $('#midDiv').append(modalDiv);
-    
-    $('#midDiv').on('click','.modalMain', function(){
-        $('.modalMain').css('display', 'none');
-    });
 
 
 }); //ends ready
