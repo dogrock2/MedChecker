@@ -99,11 +99,19 @@
 
 
 
-@media only screen and (max-width: 884px) {
-    #appSection {
-        /*background-color: lightblue;*/
-
+@media only screen and (max-width: 400px) {
+    #searchFrm {
+        /* display: flex; */
+        /* margin-left: 8px; */
     }
+
+    #searchBtn{
+        
+    }
+
+    /* #searchTerm {
+        margin-left: 8px;
+    } */
 
 }
 
@@ -113,5 +121,11 @@
     }
     #btns {
         margin-bottom: 20px;
+    }
+    #searchTerm {
+        margin-left: 15px;
+    }
+    #searchBtn{
+     margin-left: 15px !important;   
     }
 }
