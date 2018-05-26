@@ -25,13 +25,21 @@ $().ready(function () {
             console.log('looged in ');
             $('#logInOut').text('Logout');
             setVarList();
-            setAddMeds();
-            window.location.href = "index.html";
+            setAddMeds();            
         } else {
             console.log('not logged in ');
             $('#logInOut').text('Login');
             $('#medsAddDiv').empty();
         }
+    });
+
+    $('#logInOut').on('click', function(){
+        let currentTxt = $('#logInOut').text();
+        if(currentTxt === 'Login')
+            window.location.href = "login.html";
+        else
+            window.location.href = "index.html";    
+
     });
 
     function setVarList() {
