@@ -59,7 +59,8 @@
             <div class="container">
                 <div class="text-warning" id="homeText">"Peace of mind"</div>
                 <small class="text-warning ml-2">*Check your medications for possible interactions.</small>
-                <br><a class="btn btn-outline-info ml-5 mt-2" href="#appSection">Check Your Meds</a>
+                <br>
+                <a class="btn btn-outline-info ml-5 mt-2" href="#appSection">Check Your Meds</a>
             </div>
         </div>
     </section>
@@ -206,13 +207,16 @@
             <div class="container">
                 <div class="text-muted small pt-3 text-center">Copyright &copy; Codecipe LLC 2018</div>
                 <div class="text-muted small pt-3 text-center">
-                    <i class="far fa-envelope"></i>&nbsp; alex@codecipe.com</div>
+                    <a class="btn" id="contactBtn">
+                        <i class="far fa-envelope"></i>&nbsp; alex@codecipe.com
+                    </a>
+                </div>
                 <hr>
             </div>
         </footer>
     </section>
 
-    <!-- Modal -->
+    <!-- Disclaimer Modal -->
     <div class="modal" tabindex="-1" role="dialog" id="myModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -233,7 +237,53 @@
         </div>
     </div>
 
+    <!-- Message Modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="msgModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Questions?</h5>
+                    <button type="button" class="close" id="closeMsgModal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="needs-validation" id="modalMsgFrm">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="contactName" aria-describedby="Your name." placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="inputEmail" aria-describedby="Your email." placeholder="Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="msgBox" aria-describedby="Your message." placeholder="Your message" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info" id="modalMsgSend">Send</button>
+                        <button type="reset" class="btn btn-danger">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <!-- Response Modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="myRespModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thank You</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMsgResp">Message sent.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" id="modalMsgOk">OK</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/script/navbar-fixed.js"></script>
