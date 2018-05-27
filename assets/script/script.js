@@ -159,6 +159,40 @@ $().ready(function () {
         $('#resultsDiv').empty();
     });
 
+    $('#contactBtn').on('click', function(){
+        $('#msgModal').show();
+    });
+
+    $('#modalMsgFrm').on('submit', function(e){
+        e.preventDefault();
+        var name = $('#contactName').val();
+        var email = $('#inputEmail').val();
+        var msg = $('#msgBox').val();
+        
+        $('#msgModal').hide();
+
+        var data = {
+            email: email,
+            subject: 'MedCheckerApp',
+            msg: name+': '+msg
+        };
+
+        $.post('https://us-central1-codecipemsg.cloudfunctions.net/sendEmail', data, function(data){
+           if(data === 'Message sent'){
+                $('#myRespModal').show();
+           }
+        });
+        
+    });
+
+    $('#modalMsgOk').on('click', function(){
+        $('#myRespModal').hide();
+    });
+
+    $('#closeMsgModal').on('click', function(){
+        $('#msgModal').hide();
+    });
+
     function setPersonalListID() {
         var cnt = 0;
         var len = medsPersonalList.length;
