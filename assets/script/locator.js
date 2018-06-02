@@ -42,6 +42,8 @@
       $('#stateInput').val('');
       $('#addrInput').val('');
       $('#resultsMap').empty();
+      $('#resultsMap').removeClass();
+      $('#resultsMap').css('height','15px');
     
 	    rad = 1;
       var1 = 37.1;
